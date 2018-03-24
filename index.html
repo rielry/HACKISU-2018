@@ -13,6 +13,49 @@
                         <h6>Travel Planning Assistant</h6>
                 </div> <!-- pacaBagTitle -->
             </div> <!-- row1 -->
+
+            <div class="row" id="row2">
+                <div class="col-sm-12">
+                    <div class="userInputs">
+                        <br>
+                        <form>
+                            <p>Where are you going?</p>
+                            <input type="text" name="location" patter"[0-9]{5}" placeholder="5 Digit Zipcode"><br>
+
+                            <p>How many days will you be staying?</p>
+                            1 <input type="range" name="daysTravelling" min="1" max="5"> 5 <br>
+                            <!--make numbers dynamic later-->
+
+                            <p>What is your budget range per person?</p>
+                            <input type="radio" name="budgetRange" value="low"> $0 - $150 <br>
+                            <input type="radio" name="budgetRange" value="medium"> $151 - $300 <br>
+                            <input type="radio" name="budgetRange" value="high"> $301 - $500 <br>
+
+                            <br>
+                            <p>Is this a family friendly vacation?</p>
+                            <select>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="any">Doesn't matter!</option>
+                            </select>
+
+                            <p>What sort of entertainment are you looking for? (check all that apply)</p>
+                            <input type="checkbox" name="entertainment" value="nightlife">Night life<br>
+                            <input type="checkbox" name="entertainment" value="music">Music<br>
+                            <input type="checkbox" name="entertainment" value="parks">Parks<br>
+                            <input type="checkbox" name="entertainment" value="museums">Museums<br>
+                            <input type="checkbox" name="entertainment" value="hiking">Hiking<br>
+                            <input type="checkbox" name="entertainment" value="Swimming">Swimming<br>
+                            <input type="checkbox" name="entertainment" value="biking">Biking<br>
+                            <input type="checkbox" name="entertainment" value="liveshows">Live Shows<br>
+
+
+                            <br>
+                            <input type="submit" value="submit">
+                        </form>
+                    </div>
+                </div> 
+            </div> <!--row2-->
         
         </div> <!--container-->
         
