@@ -4,6 +4,7 @@ const yelp = require('yelp-fusion');
 const client = yelp.client(yelpKey);
 
 exports.get_places = function(req, res) {
+
 	//sort result by price
 	res.sort(function(a, b) {
 		if(a['price'].length > b['price'].length) {
@@ -19,14 +20,16 @@ exports.get_places = function(req, res) {
 	if(req.query.familyFriendly) {
 		results = filterAdult(res);
 	}
-
-	results = removeExpensive(results, req.query.budget);
-
+	if(req.query.budget.length != 4) {
+		results = removeExpensive(results, req.query.budget);
+	}
+	
 	var heRelacc = parseInt(req.query.activeLevel) / 5;
 	var adventure = parseInt(req.query.adventureLevel) / 5;
 	var urban = parseInt(req.query.urbanLevel) / 5;
 	var material = parseInt(req.query.materialismLevel) / 5;
 	var earlyRiser = parseInt(req.query.earlyRisers) / 5;
+
 
 }
 
@@ -46,7 +49,7 @@ function filterAdult(response) {
 		if(!containsCategory(response[i], 'adultentertainment') || !containsCategory(response[i], 'bars') 
 		|| !containsCategory(response[i], 'barcrawl') || !containsCategory(response[i], 'clubcrawl')  
 		|| !containsCategory(response[i], 'beergardens') ) {
-			result.append(response[i]);
+			result.push(response[i]);
 		}
 	}
 	return result;
