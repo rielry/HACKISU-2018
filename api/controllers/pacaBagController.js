@@ -4,6 +4,8 @@ const yelp = require('yelp-fusion');
 const client = yelp.client(yelpKey);
 exports.get_places = function(req, res) {
 	//this is where we wanna do all our stuff. it should take location in long and lat as well as user personality and use that to do everything we need. first a search on the businesses using the locatoin, and then filter the places with the personality. 
-	
-	console.log(req);
+	if(req.query.familyFriendly) {
+		//TODO: filter adult things
+	}
+	// console.log(req);
 }
