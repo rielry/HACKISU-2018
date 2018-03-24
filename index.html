@@ -2,15 +2,18 @@
 <html>
     <head>
         <title>PacaBag - Travel Planning Assistant</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="./frontend/js/main.js"></script>
+
     </head>
     <body>
         <div class="container">
             <div class="row" id="row1">
                 <div class="col-sm-12" id="pacaBagTitle">
                         <h1>PacaBag</h1>
-                        <h6>Travel Planning Assistant</h6>
+                        <h6>Your personal travel planning assistant</h6>
                 </div> <!-- pacaBagTitle -->
             </div> <!-- row1 -->
 
@@ -18,15 +21,23 @@
                 <div class="col-sm-12">
                     <div class="userInputs">
                         <br>
-                        <form>
+                        <form onsubmit="parseForm()">
                             <p>Where are you going?</p>
-                            <input type="text" name="location" patter"[0-9]{5}" placeholder="5 Digit Zipcode"><br>
+                            <input type="text" pattern="[0-9]{5}" placeholder="5 digit zipcode" name="location" id="location"><br>
+
+                            <p>How will you be travelling?</p>
+                            <select>
+                                <option value="car">Car</option>
+                                <option value="plane">Plane</option>
+                                <option value="train">Train</option>
+                            </select>
 
                             <p>How many days will you be staying?</p>
-                            1 <input type="range" name="daysTravelling" min="1" max="5"> 5 <br>
+                            1 <input type="range" id="daysTravelling" name="daysTravelling" min="1" max="5">5 <br>
+                            
                             <!--make numbers dynamic later-->
 
-                            <p>What is your budget range per person?</p>
+                            <p>What is your budget range per person for the whole trip?</p>
                             <input type="radio" name="budgetRange" value="low"> $0 - $150 <br>
                             <input type="radio" name="budgetRange" value="medium"> $151 - $300 <br>
                             <input type="radio" name="budgetRange" value="high"> $301 - $500 <br>
@@ -36,22 +47,17 @@
                             <select>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
-                                <option value="any">Doesn't matter!</option>
                             </select>
 
-                            <p>What sort of entertainment are you looking for? (check all that apply)</p>
-                            <input type="checkbox" name="entertainment" value="nightlife">Night life<br>
-                            <input type="checkbox" name="entertainment" value="music">Music<br>
-                            <input type="checkbox" name="entertainment" value="parks">Parks<br>
-                            <input type="checkbox" name="entertainment" value="museums">Museums<br>
-                            <input type="checkbox" name="entertainment" value="hiking">Hiking<br>
-                            <input type="checkbox" name="entertainment" value="Swimming">Swimming<br>
-                            <input type="checkbox" name="entertainment" value="biking">Biking<br>
-                            <input type="checkbox" name="entertainment" value="liveshows">Live Shows<br>
-
-
+                            <p>I prefer to...</p>
+                            Go on relaxing vacations <input type="range" id="activeLevel" min="1" max="5"> Go on active vacations<br>
+                            Go on daring adentures <input type="range" id="adventureLevel" min="1" max="5"> Stay in my comfort zone<br>
+                            Enjoy local culture <input type="range" id="cultureLevel" min="1" max="5"> Stick to what I know<br>
+                            Explore cities <input type="range" id="urbanLevel" min="1" max="5"> Stay in nature <br>
+                            I want keepsakes <input type="range" id="materialismLevel" min="1" max="5"> I want memories <br>
+                            I'm an early bird <input type="range" id="earlyRisers" min="1" max="5"> I'm a night owl<br>
                             <br>
-                            <input type="submit" value="submit">
+                            <input type="submit" value="Submit">
                         </form>
                     </div>
                 </div> 
