@@ -5,6 +5,7 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs3VmIxebVCXX0p1oH6vWjgias5-lorIQ&libraries=places"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
@@ -26,12 +27,19 @@
                     </div> <!-- pacaBagTitle -->
                 </div> <!-- row1 -->
 
+
                 <div class="row" id="row2">
                     <div class="col-sm-12">
                         <div class="userInputs">
                             <br>
-                            <form onsubmit="parseForm(event)">
-                                
+                            <form onsubmit="getLocation(event)">
+                                <p>Where are you going?</p>
+                                <input type="text" pattern="[0-9]{5}" placeholder="5 digit zipcode" name="location" id="location"><br>
+                                <input type="submit" value="Search!">
+                            </form>
+
+                             <p id="locationResult"></p>
+                            <form onsubmit="parseData(event)">
                                 <div class="row" id="tripDetails">
                                     <div class="col-sm-6">
                                         <p class="header3">Where are you going?</p>
@@ -56,6 +64,7 @@
                                         <input type="radio" name="budgetRange" value="low"> $0 - $150 <br>
                                         <input type="radio" name="budgetRange" value="medium"> $151 - $300 <br>
                                         <input type="radio" name="budgetRange" value="high"> $301 - $500 <br>
+
 
                                         <br>
                                         <p class="header3">Is this a family friendly vacation?</p>
@@ -94,6 +103,6 @@
             </div> <!--container-->
         </div> <!--body-->
         
-        <script src="./frontend/js/main.js"></script>
+        <script src="pacabag/js/main.js"></script>
     </body>
 </html>

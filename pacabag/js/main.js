@@ -1,23 +1,39 @@
-function parseForm(e) {
-
+function getLocation(e) {
     e.preventDefault();
-
     var location = $('#location').val();
-    var apiKey = 'AIzaSyD-HyEXFrceDw9DlR7Dq2umA7P7kNFV9V4';
-    var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + location + '&key=' + apiKey;
- 
-    $.ajax({
-        url: url,
-        type: 'GET',
-        dataType: 'JSON',
-        data: {},
-        success: function(data) {
-            console.log(data);
-        },
-        error: function(err) {
-            console.log(url);
-            console.log('error');
-            console.log(JSON.stringify(err));
-        }
-    });
+    var apiKey = 'AIzaSyDs3VmIxebVCXX0p1oH6vWjgias5-lorIQ';
+    var url = 'https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:' + location + '&components=postal_code&key=' + apiKey;
+
+    var rs = '';
+    var loc;
+   
+    if(location) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'JSON',
+            success: function(data) {
+                if(data.results.length > 0) {
+                    console.log(data.results[0]);
+                    loc = data.results[0].geometry.location;
+                    rs += loc.lat + ',' + loc.lng;
+                    var city = data.results[0].address_components[1].long_name;
+                    $('#locationResult').html('Looks like you\'re going to ' + city + '! Great choice!');
+                    return rs;
+                } else {
+                    //no matches
+                    $('#locationResult').html('Uh oh! We couldn\'t find a location with zipcode ' + location + '! Try again?' );
+                    return null;
+                }
+            },
+            error: function(err) {
+                console.log(err);
+            }
+        });
+    }
+    return null;
+}
+
+function parseData() {
+
 }
