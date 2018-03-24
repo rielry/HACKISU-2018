@@ -38,7 +38,6 @@
                     <div class="col-sm-12">
                         <div class="userInputs">
                             <br>
-
                             <div class="row" id="firstBoi">
                                 <div class="col-sm-12 headerCenter">
                                     <form onsubmit="getLocation(event)">
@@ -51,13 +50,11 @@
 
                             <div id="secondBoi" style="display: none; padding: 2em;">
                                 <p class="header2 headerCenter" id="locationResult"></p>
-
-
                                 <form onsubmit="parseData(event)">
                                     <div class="row" id="tripDetails">
                                         <div class="col-sm-6" style="padding-left: 20%;">
                                             <p class="header3">How will you be travelling?</p>
-                                            <select>
+                                            <select id="#travelMethod">
                                                 <option value="car">Car</option>
                                                 <option value="plane">Plane</option>
                                                 <option value="train">Train</option>
@@ -75,10 +72,9 @@
                                             <input type="radio" name="budgetRange" value="medium"> $151 - $300 <br>
                                             <input type="radio" name="budgetRange" value="high"> $301 - $500 <br>
 
-
                                             <br>
                                             <p class="header3">Is this a family friendly vacation?</p>
-                                            <select>
+                                            <select id="familyFriendly">
                                                 <option value="yes">Yes</option>
                                                 <option value="no">No</option>
                                             </select>

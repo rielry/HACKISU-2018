@@ -1,3 +1,5 @@
+var travellerInfo = new Object();
+
 function getLocation(e) {
     e.preventDefault();
     var location = $('#location').val();
@@ -14,13 +16,13 @@ function getLocation(e) {
             dataType: 'JSON',
             success: function(data) {
                 if(data.results.length > 0) {
-                    console.log(data.results[0]);
                     loc = data.results[0].geometry.location;
                     rs += loc.lat + ',' + loc.lng;
                     var city = data.results[0].address_components[1].long_name;
                     $('#locationResult').html('Looks like you\'re going to ' + city + '! Great choice!');
                     $('#firstBoi').css('display', 'none');
                     $('#secondBoi').css('display', 'inherit');
+                    travellerInfo.location = rs;
                     return rs;
                 } else {
                     //no matches
@@ -37,5 +39,15 @@ function getLocation(e) {
 }
 
 function parseData() {
-
+    travellerInfo.travelMethod = $('#travelMethod').val();
+    travellerInfo.days = $('#daysTravelling').val();
+    travellerInfo.budget = $('input[name=budgetRange]:checked').val();
+    travellerInfo.familyFriendly = $('#familyFriendly').val();
+    travellerInfo.activeLevel = $('#activeLevel').val();
+    travellerInfo.adventureLevel = $('#adventureLevel').val();
+    travellerInfo.urbanLevel = $('#urbanLevel').val();
+    travellerInfo.materialismLevel = $('#materialismLevel').val();
+    travellerInfo.earlyRisers = $('#earlyRisers').val(); 
+    console.log(JSON.stringify(travellerInfo));
+  
 }
