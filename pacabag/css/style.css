@@ -1,3 +1,20 @@
+/*--- FONTS ---*/
+@font-face{
+  font-family: Signika;
+  src: url(../assets/Fonts/Signika-Regular.ttf);
+}
+
+@font-face{
+  font-family: Signika-Light;
+  src: url(../assets/Fonts/Signika-Light.ttf);
+}
+
+@font-face{
+  font-family: Signika-Bold;
+  src: url(../assets/Fonts/Signika-Bold.ttf);
+}
+
+
 /*--- MISC ELEMENTS ---*/
 .strip {
   height: auto;
@@ -17,8 +34,43 @@
   box-shadow: 2px 2px 0px rgba(0,0,0,.4);
 }
 
+.paca {
+	width: 10em;
+	height:auto;
+}
+
 .body{
-	background-color: #f2f2f2;
+	background-color: #ffffff;
+}
+
+/*--- OVERWRITING BOOTSTRAP ---*/
+.container{
+	max-width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.col-sm-6{
+	padding: 5%;
+}
+
+/*--- INPUT ---*/
+.niceInput{
+	font-family: Signika;
+	font-size: 1.5em;
+	text-align: center;
+	width: 18%;
+    padding: 10px 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 0px solid #ccc;
+    border-bottom: 2px solid #666666;
+    box-sizing: border-box;
+}
+
+.buttonWrapper{
+	text-align: center;
+	margin: 10px 5px;
 }
 
 /*

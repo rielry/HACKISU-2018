@@ -19,6 +19,8 @@ function getLocation(e) {
                     rs += loc.lat + ',' + loc.lng;
                     var city = data.results[0].address_components[1].long_name;
                     $('#locationResult').html('Looks like you\'re going to ' + city + '! Great choice!');
+                    $('#firstBoi').css('display', 'none');
+                    $('#secondBoi').css('display', 'inherit');
                     return rs;
                 } else {
                     //no matches

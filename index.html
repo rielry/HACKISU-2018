@@ -11,6 +11,7 @@
 
         <link rel="stylesheet" type="text/css" href="pacabag/css/style.css">
         <link rel="stylesheet" type="text/css" href="pacabag/css/textStyling.css">
+        <link rel="stylesheet" type="text/css" href="pacabag/css/sliderStyling.css">
     </head>
 
     <body>
@@ -19,9 +20,14 @@
                 <div class="row" id="row1">
                     <div class="col-sm-12" id="pacaBagTitle">
                         <div class="strip">
-                            <div class="col-sm-10">
-                                <p class="header1" style="color: white;">PacaBag</p>
-                                <p class="header2" style="color: white;">Your personal travel planning assistant</p>
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <img src="pacabag/assets/Pictures/alpaca_logo.png" class="paca">
+                                </div>
+                                <div class="col-sm-10">
+                                    <p class="header1" style="color: white;">PacaBag</p>
+                                    <p class="header2" style="color: white;">Your personal travel planning assistant</p>
+                                </div>
                             </div>
                         </div>
                     </div> <!-- pacaBagTitle -->
@@ -32,71 +38,150 @@
                     <div class="col-sm-12">
                         <div class="userInputs">
                             <br>
-                            <form onsubmit="getLocation(event)">
-                                <p>Where are you going?</p>
-                                <input type="text" pattern="[0-9]{5}" placeholder="5 digit zipcode" name="location" id="location"><br>
-                                <input type="submit" value="Search!">
-                            </form>
 
-                             <p id="locationResult"></p>
-                            <form onsubmit="parseData(event)">
-                                <div class="row" id="tripDetails">
-                                    <div class="col-sm-6">
+                            <div class="row" id="firstBoi">
+                                <div class="col-sm-12 headerCenter">
+                                    <form onsubmit="getLocation(event)">
                                         <p class="header3">Where are you going?</p>
-                                        <input type="text" pattern="[0-9]{5}" placeholder="5 digit zipcode" name="location" id="location"><br>
-                                        <br>
+                                        <input type="text" pattern="[0-9]{5}" placeholder="5 digit zipcode" name="location" id="location" class="niceInput"><br>
+                                        <input type="submit" value="Search!">
+                                    </form>
+                                </div>
+                            </div>
 
-                                        <p class="header3">How will you be travelling?</p>
-                                        <select>
-                                            <option value="car">Car</option>
-                                            <option value="plane">Plane</option>
-                                            <option value="train">Train</option>
-                                        </select>
-                                        <br>
-                                        <br>
-
-                                        <p class="header3">How many days will you be staying?</p>
-                                        <!--make numbers dynamic later-->
-                                        1 <input type="range" id="daysTravelling" name="daysTravelling" min="1" max="5">5 <br> 
-                                    </div>                            
-                                    <div class="col-sm-6">
-                                        <p class="header3">What is your budget range per person for the whole trip?</p>
-                                        <input type="radio" name="budgetRange" value="low"> $0 - $150 <br>
-                                        <input type="radio" name="budgetRange" value="medium"> $151 - $300 <br>
-                                        <input type="radio" name="budgetRange" value="high"> $301 - $500 <br>
+                            <div id="secondBoi" style="display: none; padding: 2em;">
+                                <p class="header2 headerCenter" id="locationResult"></p>
 
 
-                                        <br>
-                                        <p class="header3">Is this a family friendly vacation?</p>
-                                        <select>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select>
-                                    </div>
-                                </div> <!-- Trip Details -->
+                                <form onsubmit="parseData(event)">
+                                    <div class="row" id="tripDetails">
+                                        <div class="col-sm-6" style="padding-left: 20%;">
+                                            <p class="header3">How will you be travelling?</p>
+                                            <select>
+                                                <option value="car">Car</option>
+                                                <option value="plane">Plane</option>
+                                                <option value="train">Train</option>
+                                            </select>
+                                            <br>
+                                            <br>
 
-                                <br>
-                                <br>
+                                            <p class="header3">How many days will you be staying?</p>
+                                            <!--make numbers dynamic later-->
+                                            1 <input type="range" id="daysTravelling" name="daysTravelling" min="1" max="5">5 <br> 
+                                        </div>                            
+                                        <div class="col-sm-6" style="padding-right: 20%;">
+                                            <p class="header3">What is your budget range per person for the whole trip?</p>
+                                            <input type="radio" name="budgetRange" value="low"> $0 - $150 <br>
+                                            <input type="radio" name="budgetRange" value="medium"> $151 - $300 <br>
+                                            <input type="radio" name="budgetRange" value="high"> $301 - $500 <br>
 
-                                <div class="row" id="personalDetails">
-                                    <p class="header3">I prefer to...</p>
-                                    <div class=col-sm-12>
-                                        <div class="row">
-                                        
-                                            Go on relaxing vacations <input type="range" id="activeLevel" min="1" max="5"> Go on active vacations<br>
-                                            Go on daring adentures <input type="range" id="adventureLevel" min="1" max="5"> Stay in my comfort zone<br>
-                                            Enjoy local culture <input type="range" id="cultureLevel" min="1" max="5"> Stick to what I know<br>
-                                            Explore cities <input type="range" id="urbanLevel" min="1" max="5"> Stay in nature <br>
-                                            I want keepsakes <input type="range" id="materialismLevel" min="1" max="5"> I want memories <br>
-                                            I'm an early bird <input type="range" id="earlyRisers" min="1" max="5"> I'm a night owl<br>
 
+                                            <br>
+                                            <p class="header3">Is this a family friendly vacation?</p>
+                                            <select>
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
                                         </div>
-                                    </div>
-                                    <br>
-                                </div> <!-- Trip Details -->
+                                    </div> <!-- Trip Details -->
 
-                                <input type="submit" value="Submit">
-                            </form>
+                                    <br>
+                                    <br>
+
+                                    <div class="row" id="personalDetails">
+                                        <div class="col-sm-12">
+                                            <p class="header3 headerCenter">I prefer to...</p>
+                                            
+                                            <div class="row">
+                                                <div class="col-sm-4 label-Left">
+                                                    Go on relaxing vacations
+                                                </div>
+                                                <div class="col-sm-4 headerCenter">
+                                                    <div class="slider-wrapper">
+                                                        <input type="range" id="activeLevel" min="1" max="5">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 label-Right">
+                                                    Go on active vacations
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-4 label-Left">
+                                                    Go on daring adentures
+                                                </div>
+                                                <div class="col-sm-4 headerCenter">
+                                                    <div class="slider-wrapper">
+                                                        <input type="range" id="adventureLevel" min="1" max="5">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 label-Right">
+                                                    Stay in my comfort zone
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-4 label-Left">
+                                                    Enjoy local culture
+                                                </div>
+                                                <div class="col-sm-4 headerCenter">
+                                                    <div class="slider-wrapper">
+                                                        <input type="range" id="cultureLevel" min="1" max="5">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 label-Right">
+                                                    Stick to what I know
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-4 label-Left">
+                                                    Explore cities
+                                                </div>
+                                                <div class="col-sm-4 headerCenter">
+                                                    <div class="slider-wrapper">
+                                                        <input type="range" id="urbanLevel" min="1" max="5">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 label-Right">
+                                                    Stay in nature
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-4 label-Left">
+                                                    I want keepsakes
+                                                </div>
+                                                <div class="col-sm-4 headerCenter">
+                                                    <div class="slider-wrapper">
+                                                        <input type="range" id="materialismLevel" min="1" max="5">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 label-Right">
+                                                    I want memories
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-4 label-Left">
+                                                    I'm an early bird
+                                                </div>
+                                                <div class="col-sm-4 headerCenter">
+                                                    <div class="slider-wrapper">
+                                                        <input type="range" id="earlyRisers" min="1" max="5">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 label-Right">
+                                                    I'm a night owl
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div> <!-- Personal Details -->
+
+                                    <p class="buttonWrapper"><input type="submit" value="Submit" class="headerCenter"></p>
+                                </form>
+                            </div>
                         </div>
                     </div> 
                 </div> <!--row2-->
