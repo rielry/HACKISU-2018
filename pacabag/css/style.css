@@ -1,0 +1,35 @@
+/*--- MISC ELEMENTS ---*/
+.strip {
+  height: auto;
+  width: 100%;
+  background-color: #54b59a;
+  border-top: 10px solid #479a83;
+  border-bottom: 10px solid #479a83;
+  margin: 30px 0px;
+  padding: 5px;
+  box-shadow: 0px 2px 0px rgba(0,0,0,.4);
+}
+
+.card {
+  background-color: #ffadfc;
+  border-radius: 0px;
+  padding: 10px;
+  box-shadow: 2px 2px 0px rgba(0,0,0,.4);
+}
+
+.body{
+	background-color: #f2f2f2;
+}
+
+/*
+
+blue - 54b59a
+blue acct - 479a83
+
+pink - ffadfc
+pink acct - b15fb7
+
+offwhite - f2f2f2
+
+
+*/

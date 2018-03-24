@@ -39,5 +39,13 @@ function getLocation(e) {
 function parseData() {
     travellerInfo.travelMethod = $('#travelMethod').val();
     travellerInfo.days = $('#daysTravelling').val();
-    console.log(travellerInfo);
+    travellerInfo.budget = $('input[name=budgetRange]:checked').val();
+    travellerInfo.familyFriendly = $('#familyFriendly').val();
+    travellerInfo.activeLevel = $('#activeLevel').val();
+    travellerInfo.adventureLevel = $('#adventureLevel').val();
+    travellerInfo.urbanLevel = $('#urbanLevel').val();
+    travellerInfo.materialismLevel = $('#materialismLevel').val();
+    travellerInfo.earlyRisers = $('#earlyRisers').val(); 
+    console.log(JSON.stringify(travellerInfo));
+  
 }
