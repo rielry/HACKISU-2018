@@ -1,5 +1,4 @@
-function parseForm(e) {
-
+function getLocation(e) {
     e.preventDefault();
 
     var location = $('#location').val();
