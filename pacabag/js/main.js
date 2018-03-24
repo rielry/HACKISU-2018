@@ -1,5 +1,30 @@
-var travellerInfo = new Object();
+var location;
+var traveller;
 
+function traveller(location,
+    travelMethod,
+    days,
+    budget,
+    familyFriendly,
+    activeLevel,
+    adventureLevel,
+    urbanLevel,
+    materialismLevel,
+    earlyRisers)
+{
+    this.location = location;
+    this.travelMethod = travelMethod;
+    this.days = days;
+    this.budget = budget;
+    this.familyFriendly = familyFriendly;
+    this.activeLevel = activeLevel;
+    this.adventureLevel = adventureLevel;
+    this.urbanLevel = urbanLevel;
+    this.materialismLevel = materialismLevel;
+    this.earlyRisers = earlyRisers;
+}
+
+//dynamically change days travelling based on user slidy boy
 $('#daysTravelling').on('change', function(){
     var num = $('#daysTravelling').val();
 
@@ -12,7 +37,7 @@ $('#daysTravelling').on('change', function(){
 
 function getLocation(e) {
     e.preventDefault();
-    var location = $('#location').val();
+    location = $('#location').val();
     var apiKey = 'AIzaSyDs3VmIxebVCXX0p1oH6vWjgias5-lorIQ';
     var url = 'https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:' + location + '&components=postal_code&key=' + apiKey;
 
@@ -49,13 +74,31 @@ function getLocation(e) {
 }
 
 function parseData() {
-    travellerInfo.travelMethod = $('#travelMethod').val();
-    travellerInfo.days = $('#daysTravelling').val();
-    travellerInfo.budget = $('input[name=budgetRange]:checked').val();
-    travellerInfo.familyFriendly = $('#familyFriendly').val();
-    travellerInfo.activeLevel = $('#activeLevel').val();
-    travellerInfo.adventureLevel = $('#adventureLevel').val();
-    travellerInfo.urbanLevel = $('#urbanLevel').val();
-    travellerInfo.materialismLevel = $('#materialismLevel').val();
-    travellerInfo.earlyRisers = $('#earlyRisers').val(); 
+    var travelMethod = $('#travelMethod').val();
+    var days = $('#daysTravelling').val();
+    var budget = $('input[name=budgetRange]:checked').val();
+    var familyFriendly = $('#familyFriendly').val();
+    var activeLevel = $('#activeLevel').val();
+    var adventureLevel = $('#adventureLevel').val();
+    var urbanLevel = $('#urbanLevel').val();
+    var materialismLevel = $('#materialismLevel').val();
+    var earlyRisers = $('#earlyRisers').val(); 
+
+    if(budget) {
+        traveller = new traveller(  location,
+                                    travelMethod,
+                                    days,
+                                    budget,
+                                    familyFriendly,
+                                    activeLevel,
+                                    adventureLevel,
+                                    urbanLevel,
+                                    materialismLevel,
+                                    earlyRisers);
+
+            console.log(traveller);
+    } else {
+        alert('Please fill out your budget!');
+    }
 }
+
