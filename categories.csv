@@ -265,178 +265,166 @@ badminton,2,3,1,2,1,3,0
 		 Town Hall (townhall)
 		
    --riley
-   
-    Religious Organizations (religiousorgs)
-		 Buddhist Temples (buddhist_temples)
-		 Churches (churches)
-		 Hindu Temples (hindu_temples)
-		 Mosques (mosques)
-		 Sikh Temples (sikhtemples)
-		 Synagogues (synagogues)
-		
-    Restaurants (restaurants)
-		 Afghan (afghani)
-		 African (african)
-		     Senegalese (senegalese)
-		     South African (southafrican)
-		 American (New)
-		 (newamerican)
-		 American (Traditional)
-		 (tradamerican)
-		 Arabian (arabian)
-		 Argentine (argentine)
-		 Armenian (armenian)
-		 Asian Fusion (asianfusion)
-		 Australian (australian)
-		 Austrian (austrian)
-		 Bangladeshi (bangladeshi)
-		 Barbeque (bbq)
-		 Basque (basque)
-		 Belgian (belgian)
-		 Brasseries (brasseries)
-		 Brazilian (brazilian)
-		 Breakfast & Brunch (breakfast_brunch)
-		 British (british)
-		 Buffets (buffets)
-		 Bulgarian (bulgarian)
-		 Burgers (burgers)
-		 Burmese (burmese)
-		 Cafes (cafes)
-		     Themed Cafes (themedcafes)
-		 Cafeteria (cafeteria)
-		 Cajun/Creole (cajun)
-		 Cambodian (cambodian)
-		 Caribbean (caribbean)
-		     Dominican (dominican)
-		     Haitian (haitian)
-		     Puerto Rican (puertorican)
-		     Trinidadian (trinidadian)
-		 Catalan (catalan)
-		 Cheesesteaks (cheesesteaks)
-		 Chicken Shop (chickenshop)
-		 Chicken Wings (chicken_wings)
-		 Chinese (chinese)
-		     Cantonese (cantonese)
-		     Dim Sum (dimsum)
-		     Hainan (hainan)
-		     Shanghainese (shanghainese)
-		     Szechuan (szechuan)
-		 Comfort Food (comfortfood)
-		 Creperies (creperies)
-		 Cuban (cuban)
-		 Czech (czech)
-		 Delis (delis)
-		 Diners (diners)
-		 Dinner Theater (dinnertheater)
-		 Ethiopian (ethiopian)
-		 Fast Food (hotdogs)
-		 Filipino (filipino)
-		 Fish & Chips (fishnchips)
-		 Fondue (fondue)
-		 Food Court (food_court)
-		 Food Stands (foodstands)
-		 French (french)
-		     Mauritius (mauritius)
-		     Reunion (reunion)
-		 Game Meat (gamemeat)
-		 Gastropubs (gastropubs)
-		 Georgian (georgian)
-		 German (german)
-		 Gluten-Free (gluten_free)
-		 Greek (greek)
-		 Guamanian (guamanian)
-		 Halal (halal)
-		 Hawaiian (hawaiian)
-		 Himalayan/Nepalese (himalayan)
-		 Honduran (honduran)
-		 Hong Kong Style Cafe (hkcafe)
-		 Hot Dogs (hotdog)
-		 Hot Pot (hotpot)
-		 Hungarian (hungarian)
-		 Iberian (iberian)
-		 Indian (indpak)
-		 Indonesian (indonesian)
-		 Irish (irish)
-		 Italian (italian)
-		     Calabrian (calabrian)
-		     Sardinian (sardinian)
-		     Sicilian (sicilian)
-		     Tuscan (tuscan)
-		 Japanese (japanese)
-		     Conveyor Belt Sushi (conveyorsushi)
-		     Izakaya (izakaya)
-		     Japanese Curry (japacurry)
-		     Ramen (ramen)
-		     Teppanyaki (teppanyaki)
-		 Kebab (kebab)
-		 Korean (korean)
-		 Kosher (kosher)
-		 Laotian (laotian)
-		 Latin American (latin)
-		     Colombian (colombian)
-		     Salvadoran (salvadoran)
-		     Venezuelan (venezuelan)
-		 Live/Raw Food (raw_food)
-		 Malaysian (malaysian)
-		 Mediterranean (mediterranean)
-		     Falafel (falafel)
-		 Mexican (mexican)
-		     Tacos (tacos)
-		 Middle Eastern (mideastern)
-		     Egyptian (egyptian)
-		     Lebanese (lebanese)
-		 Modern European (modern_european)
-		 Mongolian (mongolian)
-		 Moroccan (moroccan)
-		 New Mexican Cuisine (newmexican)
-		 Nicaraguan (nicaraguan)
-		 Noodles (noodles)
-		 Pakistani (pakistani)
-		 Pan Asian (panasian)
-		 Persian/Iranian (persian)
-		 Peruvian (peruvian)
-		 Pizza (pizza)
-		 Polish (polish)
-		 Polynesian (polynesian)
-		 Pop-Up Restaurants (popuprestaurants)
-		 Portuguese (portuguese)
-		 Poutineries (poutineries)
-		 Russian (russian)
-		 Salad (salad)
-		 Sandwiches (sandwiches)
-		 Scandinavian (scandinavian)
-		 Scottish (scottish)
-		 Seafood (seafood)
-		 Singaporean (singaporean)
-		 Slovakian (slovakian)
-		 Soul Food (soulfood)
-		 Soup (soup)
-		 Southern (southern)
-		 Spanish (spanish)
-		 Sri Lankan (srilankan)
-		 Steakhouses (steak)
-		 Supper Clubs (supperclubs)
-		 Sushi Bars (sushi)
-		 Syrian (syrian)
-		 Taiwanese (taiwanese)
-		 Tapas Bars (tapas)
-		 Tapas/Small Plates (tapasmallplates)
-		 Tex-Mex (tex-mex)
-		 Thai (thai)
-		 Turkish (turkish)
-		 Ukrainian (ukrainian)
-		 Uzbek (uzbek)
-		 Vegan (vegan)
-		 Vegetarian (vegetarian)
-		 Vietnamese (vietnamese)
-		 Waffles (waffles)
-		 Wraps (wraps)	
-    	 Adult (adult)*
-		 Antiques (antiques)
-		 Art Galleries (galleries)
-		 Auction Houses (auctionhouses)
-		 Cannabis Dispensaries (cannabisdispensaries)*
-		 Flea Markets (fleamarkets)
-		 Head Shops (headshops)*
-		 Public Markets (publicmarkets)
-		 
+
+buddhist_temples,3,3,5,3,1,1,0
+churces,3,1,3,1,1,0
+mosques,3,1,3,1,1,0
+sikhtemples,3,1,3,1,1,0
+synagogues,3,1,3,1,1,0
+afghani,3,4,3,3,2,1,0
+african,3,4,3,3,2,1,0
+senegalese,3,4,3,3,2,1,0
+southafrican,3,4,3,3,2,1,0
+newamerican,3,2,4,4,2,1,0
+tradamerican,4,1,1,3,2,1,0
+arabian,3,4,3,3,2,1,0
+argentine,3,4,3,3,2,1,0
+armenian,3,4,3,3,2,1,0
+asianfusion,3,3,2,4,1,1,0
+australian,3,3,3,3,2,1,0
+austrian,3,3,3,3,2,1,0
+bangladeshi,3,4,3,3,2,1,0
+bbq,3,3,3,3,2,1,0
+basque,3,4,3,3,2,1,0
+belgian,3,3,3,3,2,1,0
+brasseries,3,3,3,3,2,1,0
+brazilian,3,4,3,3,2,1,0
+breakfast_brunch,3,3,3,3,2,1,0
+british,3,3,3,3,2,1,0
+buffets,3,3,3,3,2,1,0
+bulgarian,3,3,3,3,2,1,0
+burgers,3,3,3,3,2,1,0
+burmese,3,4,3,3,2,1,0
+cafes,3,3,3,3,2,1,0
+cafeteria,3,3,3,3,2,1,0
+cajun,3,3,3,3,2,1,0
+cambodian,3,4,3,3,2,1,0
+dominican,3,4,3,3,2,1,0
+haitian,3,4,3,3,2,1,0
+puertorican,3,4,3,3,2,1,0
+trinidadian,3,4,3,3,2,1,0
+catalan,3,4,3,3,2,1,0
+cheesesteaks,3,3,3,3,2,1,0
+chickenshop,3,3,3,3,2,1,0
+chicken_wings,3,3,3,3,2,1,0
+cantonese,3,4,3,3,2,1,0
+dimsum,3,4,3,3,2,1,0
+hainan,3,4,3,3,2,1,0
+shanghainese,3,4,3,3,2,1,0
+szechuan,3,4,3,3,2,1,0
+comfortfood,3,3,3,3,2,1,0
+creperies,3,3,3,3,2,1,0
+cuban,3,4,3,3,2,1,0
+czech,3,4,3,3,2,1,0
+delis,3,3,3,3,2,1,0
+diners,3,3,3,3,2,1,0
+dinnertheater,3,4,3,3,2,1,0
+ethiopian,3,4,3,3,2,1,0
+hotdogs,3,3,3,3,2,1,0
+filipino,3,4,3,3,2,1,0
+fishnchips,3,3,3,3,2,1,0
+fondue,3,4,3,3,2,1,0
+food_court,3,2,3,3,2,1,0
+foodstands,3,3,3,3,2,1,0
+mauritius,3,4,3,3,2,1,0
+reunion,3,4,3,3,2,1,0
+gamemeat,3,3,3,3,2,1,0
+gastropubs,3,4,3,3,2,1,0
+georgian,3,4,3,3,2,1,0
+german,3,3,3,3,2,1,0
+gluten_free,3,3,3,3,2,1,0
+greek,3,4,3,3,2,1,0
+guamanian,3,4,3,3,2,1,0
+halal,3,4,3,3,2,1,0
+hawaiian,3,3,3,3,2,1,0
+himalayan,3,5,3,3,2,1,0
+honduran,3,4,3,3,2,1,0
+hkcafe,3,4,3,3,2,1,0
+hotdog,3,2,3,3,2,1,0
+hotpot,3,4,3,3,2,1,0
+hungarian,3,4,3,3,2,1,0
+iberian,3,4,3,3,2,1,0
+indpak,3,4,3,3,2,1,0
+indonesian,3,4,3,3,2,1,0
+irish,3,4,3,3,2,1,0
+italian,3,2,3,3,2,1,0
+calabrian,3,4,3,3,2,1,0
+sardinian,3,4,3,3,2,1,0
+sicilian,3,4,3,3,2,1,0
+tuscan,3,4,3,3,2,1,0
+conveyorsushi,3,4,3,3,2,1,0
+izakaya,3,4,3,3,2,1,0
+japacurry,3,4,3,3,2,1,0
+ramen,3,4,3,3,2,1,0
+teppanyaki,3,4,3,3,2,1,0
+kebab,3,4,3,3,2,1,0
+korean,3,4,3,3,2,1,0
+kosher,3,4,3,3,2,1,0
+laotian,3,4,3,3,2,1,0
+latin,3,3,3,3,2,1,0
+colombian,3,3,3,3,2,1,0
+salvadoran,3,3,3,3,2,1,0
+venezuelan,3,3,3,3,2,1,0
+raw_food,2,5,3,3,2,1,0
+malaysian,3,4,3,3,2,1,0
+mediterranean,3,3,3,3,2,1,0
+falafel,3,4,3,3,2,1,0
+mexican,3,3,3,3,2,1,0
+tacos,3,3,3,3,2,1,0
+mideastern,3,4,3,3,2,1,0
+egyptian,3,4,3,3,2,1,0
+lebanese,3,4,3,3,2,1,0
+modern_european,3,3,3,3,2,1,0
+mongolian,3,4,3,3,2,1,0
+moroccan,3,4,3,3,2,1,0
+newmexican,3,3,3,3,2,1,0
+nicaraguan,3,4,3,3,2,1,0
+noodles,3,3,3,3,2,1,0
+pakistani,3,4,3,3,2,1,0
+panasian,3,4,3,3,2,1,0
+persian,3,4,3,3,2,1,0
+peruvian,3,4,3,3,2,1,0
+pizza,3,3,3,3,2,1,0
+polish,3,3,3,3,2,1,0
+polynesian,3,4,3,3,2,1,0
+popuprestaurants,3,3,3,3,2,1,0
+portuguese,3,4,3,3,2,1,0
+poutineries,3,3,3,3,2,1,0
+russian,3,4,3,3,2,1,0
+salad,3,2,3,3,2,1,0
+sandwiches,3,2,3,3,2,1,0
+scandinavian,3,4,3,3,2,1,0
+scottish,3,4,3,3,2,1,0
+seafood,3,3,3,3,2,1,0
+singaporean,3,4,3,3,2,1,0
+slovakian,3,4,3,3,2,1,0
+soulfood,3,3,3,3,2,1,0
+soup,3,2,3,3,2,1,0
+southern,3,2,3,3,2,1,0
+spanish,3,4,3,3,2,1,0
+srilankan,3,4,3,3,2,1,0
+steak,3,2,3,3,2,1,0
+supperclubs,3,3,3,3,2,1,0
+sushi,3,4,3,3,2,1,0
+syrian,3,4,3,3,2,1,0
+taiwanese,3,4,3,3,2,1,0
+tapas,3,4,3,3,2,1,0
+tapasmallplates,3,4,3,3,2,1,0
+tex-mex,3,3,3,3,2,1,0
+thai,3,4,3,3,2,1,0
+turkish,3,4,3,3,2,1,0
+ukrainian,3,4,3,3,2,1,0
+uzbek,3,4,3,3,2,1,0
+vegan,3,3,3,3,2,1,0
+vegetarian,3,3,3,3,2,1,0
+vietnamese,3,4,3,3,2,1,0
+waffles,3,3,3,3,2,1,0
+wraps,3,3,3,3,2,1,0
+adult,2,4,1,4,1,1
+antiques,2,2,1,4,1,0
+galleries,3,3,5,4,2,0
+auctionhouses,3,4,4,2,5,3,0
+cannabisdispensaries,4,5,2,3,4,1,1
+fleamarkets,3,3,4,3,5,3,0
+headshops,4,5,2,3,4,1,1
+publicmarkets,3,3,4,3,5,3,0
