@@ -4,7 +4,7 @@ $('#daysTravelling').on('change', function(){
     var num = $('#daysTravelling').val();
 
     if(num == 1) {
-        $('#daysTravellingDom').html(num + ' day');
+        $('#daysTravellingDom').html('1 day');
     } else {
         $('#daysTravellingDom').html(num + ' days');
     }
