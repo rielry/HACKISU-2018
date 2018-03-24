@@ -13,14 +13,16 @@ function getLocation(e) {
             type: 'GET',
             dataType: 'JSON',
             success: function(data) {
-                console.log(data.results);
                 if(data.results.length > 0) {
+                    console.log(data.results[0]);
                     loc = data.results[0].geometry.location;
                     rs += loc.lat + ',' + loc.lng;
+                    var city = data.results[0].address_components[1].long_name;
+                    $('#locationResult').html('Looks like you\'re going to ' + city + '! Great choice!');
                     return rs;
                 } else {
                     //no matches
-                    alert('Uh oh! We couldn\'t find a location with zipcode ' + location + '! Try again?' );
+                    $('#locationResult').html('Uh oh! We couldn\'t find a location with zipcode ' + location + '! Try again?' );
                     return null;
                 }
             },
