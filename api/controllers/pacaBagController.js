@@ -4,61 +4,49 @@ const yelp = require('yelp-fusion');
 const client = yelp.client(yelpKey);
 
 exports.get_places = function(req, res) {
+	//sort result by price
+	res.sort(function(a, b) {
+		if(a['price'].length > b['price'].length) {
+			return 1;
+		} else if(a['price'].length < b['price'].length) {
+			return -1;
+		} else {
+			return 0;
+		}
+	});
+
 	if(req.query.familyFriendly) {
 		//filter adultentertainment,bars,barcrawl,clubcrawl,beergardens
 	}
-	
 }
 
-function contains(json, value) {
-	for(var i = 0; i < json.length; i++) {
-		var curr = json[i]['categories'];
-		for(var j = 0; j < curr.length; j++) {
-			if(curr[j]['alias'] == value) {
-				return true;
-			}
+function removeExpensive(response, priceUpperBound) {
+	var index;
+	for(var i = 0; i < response.length; i++) {
+		if(response[i]['price'].length > priceUpperBound.length) {
+			response.splice(i, 1);
 		}
+	}
+}
+
+function filterAdult(response) {
+	var result = [];
+	for(var i = 0; i < response.length; i++) {
+		if(!containsCategory(response[i], 'adultentertainment') || !containsCategory(response[i], 'bars') 
+		|| !containsCategory(response[i], 'barcrawl') || !containsCategory(response[i], 'clubcrawl')  
+		|| !containsCategory(response[i], 'beergardens') ) {
+			result.append(response[i]);
+		}
+	}
+	return result;
+}
+
+
+function containsCategory(json, value) {
+	for(var i = 0; i < json.length; i++) {
+		if(json[i]['categories']['alias'] == value) {
+			return true;
+		} 
 	}
 	return false;
 }
-
-// //this is where we wanna do all our stuff. it should take location in long and lat as well as user personality and use that to do everything we need. first a search on the businesses using the locatoin, and then filter the places with the personality. 
-	// if(req.query.budget == 'low') {
-
-	// } else if(req.query.budget == 'medium') {
-
-	// } else if(req.query.budget == 'high') {
-
-	// } else {
-
-	// }
-	
-	// if(req.query.familyFriendly) {
-	// 	//TODO: filter adult things
-	// }
-
-	// //0 - 5 point scale
-	// if(req.query.activeLevel < 3) {
-
-	// } else {
-
-	// }
-
-	// if(req.query.urbanLevel < 3) {
-
-	// } else {
-
-	// }
-
-	// if(req.query.materialismLevel < 3) {
-
-	// } else {
-
-	// }
-
-	// if(req.query.earlyRisers < 3) {
-
-	// } else {
-
-	// }
-	// console.log(req);
