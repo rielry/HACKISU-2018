@@ -1,5 +1,15 @@
 var travellerInfo = new Object();
 
+$('#daysTravelling').on('change', function(){
+    var num = $('#daysTravelling').val();
+
+    if(num == 1) {
+        $('#daysTravellingDom').html(num + ' day');
+    } else {
+        $('#daysTravellingDom').html(num + ' days');
+    }
+});
+
 function getLocation(e) {
     e.preventDefault();
     var location = $('#location').val();
@@ -46,6 +56,4 @@ function parseData() {
     travellerInfo.urbanLevel = $('#urbanLevel').val();
     travellerInfo.materialismLevel = $('#materialismLevel').val();
     travellerInfo.earlyRisers = $('#earlyRisers').val(); 
-    console.log(JSON.stringify(travellerInfo));
-  
 }
