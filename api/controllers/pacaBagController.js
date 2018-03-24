@@ -15,18 +15,22 @@ exports.get_places = function(req, res) {
 		}
 	});
 
+	var results;
 	if(req.query.familyFriendly) {
-		//filter adultentertainment,bars,barcrawl,clubcrawl,beergardens
+		results = filterAdult(res);
 	}
+
+	results = removeExpensive(results, req.query.budget);
 }
 
 function removeExpensive(response, priceUpperBound) {
-	var index;
+	var result = [];
 	for(var i = 0; i < response.length; i++) {
-		if(response[i]['price'].length > priceUpperBound.length) {
-			response.splice(i, 1);
+		if(response[i]['price'].length <= priceUpperBound.length) {
+			result.push(response[i]);
 		}
 	}
+	return result;
 }
 
 function filterAdult(response) {
@@ -40,7 +44,6 @@ function filterAdult(response) {
 	}
 	return result;
 }
-
 
 function containsCategory(json, value) {
 	for(var i = 0; i < json.length; i++) {
