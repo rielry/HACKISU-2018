@@ -1,4 +1,6 @@
-function parseForm() {
+function parseForm(e) {
+
+    e.preventDefault();
 
     var location = $('#location').val();
     var apiKey = 'AIzaSyD-HyEXFrceDw9DlR7Dq2umA7P7kNFV9V4';
