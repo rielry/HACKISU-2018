@@ -11,14 +11,6 @@ const port = process.env.PORT || 3000;
 
 
 const  bodyParser = require('body-parser');
-client.search({
-  term:'Four Barrel Coffee',
-  location: 'san francisco, ca'
-}).then(response => {
-  console.log(response.jsonBody.businesses[0].name);
-}).catch(e => {
-  console.log(e);
-});
   
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
