@@ -1,4 +1,4 @@
-var location;
+var betterLocation;
 var traveller;
 
 function traveller(location,
@@ -37,7 +37,7 @@ $('#daysTravelling').on('change', function(){
 
 function getLocation(e) {
     e.preventDefault();
-    location = $('#location').val();
+    var location = $('#location').val();
     var apiKey = 'AIzaSyDs3VmIxebVCXX0p1oH6vWjgias5-lorIQ';
     var url = 'https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:' + location + '&components=postal_code&key=' + apiKey;
 
@@ -57,7 +57,7 @@ function getLocation(e) {
                     $('#locationResult').html('Looks like you\'re going to ' + city + '! Great choice!');
                     $('#firstBoi').css('display', 'none');
                     $('#secondBoi').css('display', 'inherit');
-                    travellerInfo.location = rs;
+                    betterLocation = rs;
                     return rs;
                 } else {
                     //no matches
@@ -66,14 +66,17 @@ function getLocation(e) {
                 }
             },
             error: function(err) {
-                console.log(err);
+                console.log(JSON.stringify(err));
             }
         });
     }
     return null;
 }
 
-function parseData() {
+function parseData(e) {
+
+    e.preventDefault();
+
     var travelMethod = $('#travelMethod').val();
     var days = $('#daysTravelling').val();
     var budget = $('input[name=budgetRange]:checked').val();
@@ -85,7 +88,7 @@ function parseData() {
     var earlyRisers = $('#earlyRisers').val(); 
 
     if(budget) {
-        traveller = new traveller(  location,
+        traveller = new traveller(  betterLocation,
                                     travelMethod,
                                     days,
                                     budget,
@@ -95,8 +98,6 @@ function parseData() {
                                     urbanLevel,
                                     materialismLevel,
                                     earlyRisers);
-
-            console.log(traveller);
     } else {
         alert('Please fill out your budget!');
     }
