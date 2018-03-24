@@ -39,4 +39,5 @@ function getLocation(e) {
 function parseData() {
     travellerInfo.travelMethod = $('#travelMethod').val();
     travellerInfo.days = $('#daysTravelling').val();
+    console.log(travellerInfo);
 }
