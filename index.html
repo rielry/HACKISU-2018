@@ -24,14 +24,13 @@
                             <p>Where are you going?</p>
                             <input type="text" pattern="[0-9]{5}" placeholder="5 digit zipcode" name="location" id="location"><br>
                             <input type="submit" value="Search!">
-                        </form>
+                        </form> 
 
                         <p id="locationResult"></div>
 
                         <form onsubmit="parseData(event)">
-                            
                             <p>How will you be travelling?</p>
-                            <select>
+                            <select id="travelMethod">
                                 <option value="car">Car</option>
                                 <option value="plane">Plane</option>
                                 <option value="train">Train</option>
