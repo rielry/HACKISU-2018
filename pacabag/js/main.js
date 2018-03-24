@@ -98,8 +98,22 @@ function parseData(e) {
                                     urbanLevel,
                                     materialismLevel,
                                     earlyRisers);
+
+        $.ajax({
+            url: 'http://localhost:3000/places',
+            type: 'GET',
+            dataType: 'jsonp',
+            data: traveller,
+            succes: function(){
+                console.log('success bitch');
+            },
+            error: function(err){
+                console.log('hello darkness');
+                console.log(JSON.stringify(err));
+            }
+        });
+
     } else {
         alert('Please fill out your budget!');
     }
 }
-
