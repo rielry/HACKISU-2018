@@ -1,0 +1,17 @@
+/*--- SLIDING BOIS ---*/
+.slider-wrapper {
+  padding: 0;
+}
+.slider-wrapper input {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.label-Left{
+	text-align: right;
+}
+
+.label-Right{
+	text-align: left;
+}

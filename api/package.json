@@ -1,0 +1,30 @@
+{
+  "name": "hack_isu",
+  "version": "1.0.0",
+  "description": "A travel application for MLH Hack ISU - 2018",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rielry/HACKISU-2018.git"
+  },
+  "author": "Jack Johnson, Riley Jhi, Ryan McManaman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rielry/HACKISU-2018/issues"
+  },
+  "homepage": "https://github.com/rielry/HACKISU-2018#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongodb": "^2.2.16",
+    "mongoose": "^5.0.11",
+    "yelp-fusion": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}

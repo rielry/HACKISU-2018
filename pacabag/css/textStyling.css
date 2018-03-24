@@ -34,7 +34,10 @@
   margin: auto;  
 }
 
-.pacaText{
-  font-family: Signika-Light;
+.headerCenter{
+  text-align: center;
+}
 
+p{
+  font-family: Signika-Light;
 }
