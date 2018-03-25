@@ -50,32 +50,34 @@
                             </div>
 
                             <p id="locationResultBad"></p>
-
                             <div id="secondBoi" style="display: none; padding: 2em;">
                                 <p class="header2 headerCenter" id="locationResult"></p>
+                                <p class="header3 headerCenter">Mind if we ask some questions to get to know you better?</p>
+                                
                                 <form onsubmit="parseData(event)">
-                                    <div class="row" id="tripDetails">
-                                                                
-                                        <div class="col-sm-12" style="padding-right: 50%;">
-                                          
-                                            <p class="header3">Is this a family friendly vacation?</p>
-                                            <select id="familyFriendly">
-                                                <option value="yes">Yes</option>
-                                                <option value="no">No</option>
-                                            </select>
-                                        </div>
-                                    </div> <!-- Trip Details -->
-
                                     <br>
                                     <br>
-
                                     <div class="row" id="personalDetails">
                                         <div class="col-sm-12">
-                                            <p class="header3 headerCenter">I prefer to...</p>
                                             
+                                            <div>
+                                                <div class="col-sm-12 headerCenter">
+                                                    <p class="header3">Is this a family friendly vacation?</p>
+                                                    <select id="familyFriendly">
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <br>
+                                            <br>
+
+                                            <p class="header3 headerCenter">I prefer to...</p>
+                                            <br>
                                             <div class="row">
                                                 <div class="col-sm-4 label-Left">
-                                                    Go on relaxing vacations
+                                                    <p>Go on relaxing vacations</p>
                                                 </div>
                                                 <div class="col-sm-4 headerCenter">
                                                     <div class="slider-wrapper">
@@ -83,13 +85,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 label-Right">
-                                                    Go on active vacations
+                                                    <p>Go on active vacations</p>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-sm-4 label-Left">
-                                                    Go on daring adentures
+                                                    <p>Go on daring adentures</p>
                                                 </div>
                                                 <div class="col-sm-4 headerCenter">
                                                     <div class="slider-wrapper">
@@ -97,27 +99,27 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 label-Right">
-                                                    Stay in my comfort zone
+                                                    <p>Stay in my comfort zone</p>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-sm-4 label-Left">
-                                                    Enjoy local culture
+                                                    <p>Enjoy local culture</p>
                                                 </div>
                                                 <div class="col-sm-4 headerCenter">
                                                     <div class="slider-wrapper">
-                                                        <input type="range" id="cultureLevel" min="1"" max="5">
+                                                        <input type="range" id="cultureLevel" min="1" max="5">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 label-Right">
-                                                    Stick to what I know
+                                                    <p>Stick to what I know</p>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-sm-4 label-Left">
-                                                    Explore cities
+                                                    <p>Explore cities</p>
                                                 </div>
                                                 <div class="col-sm-4 headerCenter">
                                                     <div class="slider-wrapper">
@@ -125,13 +127,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 label-Right">
-                                                    Explore nature
+                                                    <p>Explore nature</p>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-sm-4 label-Left">
-                                                    Bring home keepsakes
+                                                    <p>Bring home keepsakes</p>
                                                 </div>
                                                 <div class="col-sm-4 headerCenter">
                                                     <div class="slider-wrapper">
@@ -139,13 +141,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 label-Right">
-                                                    Bring home memories
+                                                    <p>Bring home memories</p>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-sm-4 label-Left">
-                                                    Go to bed early
+                                                    <p>Go to bed early</p>
                                                 </div>
                                                 <div class="col-sm-4 headerCenter">
                                                     <div class="slider-wrapper">
@@ -153,7 +155,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 label-Right">
-                                                    Stay up late
+                                                    <p>Stay up late</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -162,6 +164,12 @@
 
                                     <p class="buttonWrapper"><input type="submit" value="Submit" class="headerCenter"></p>
                                 </form>
+                            </div>
+
+                            <div id="thirdBoi" style="display: none; padding: 2em;">
+                                <div class="row">
+                                    
+                                </div>
                             </div>
                         </div>
                     </div> 

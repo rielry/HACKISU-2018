@@ -36,6 +36,7 @@ function getLocation(e) {
                     var city = data.results[0].address_components[1].long_name;
                     $('#locationResult').html('Looks like you\'re going to ' + city + '! Great choice!');
                     $('#firstBoi').css('display', 'none');
+                    $('#locationResultBad').css('display', 'none');
                     $('#secondBoi').css('display', 'inherit');
                     betterLocation = location;
                 } else {
@@ -76,6 +77,17 @@ function parseData(e) {
         data: data
     })
     .done(function(res) {
-        console.log(res);
+        $('#thirdBoi').css('display', 'inherit');
+
+        var n;
+        if(res.length > 5) {
+            n = 5;
+        } else {
+            n = res.length;
+        }
+
+        for(var i = 0; i < n; i++) {
+            console.log(res[i]);
+        }
     });
 }
