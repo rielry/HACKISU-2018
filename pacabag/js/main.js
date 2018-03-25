@@ -86,8 +86,33 @@ function parseData(e) {
             n = res.length;
         }
 
+        $('#placeholder').empty();
+
         for(var i = 0; i < n; i++) {
             console.log(res[i]);
+
+            if(res[i].image_url == null){
+                res[i].image_url = "pacabag/assets/pictures/alpacaload.gif";
+            }
+
+            $('#placeholder').append('<div class="card"><div class="row"><div class="col-sm-4" style="max-height: 10%;"><img src="'+ res[i].image_url +'" style=" width: 100%; height: 100%; object-fit: contain;"></div><div class="col-sm-8"><div class="container"><p class="header2" style="font-size: 2em;"><b>'+ res[i].name +'</b></p><p class="header3">' + res[i].location.address1 + ' ' + res[i].location.city + ' ' + res[i].location.state + '</p><p>'+ res[i].phone +'</p><a href="'+ res[i].url +'"> Yelp Review </a></div></div></div></div>');
         }
     });
 }
+
+
+// <div class="card">
+//     <div class="row">
+//         <div class="col-sm-4" style="max-height: 10%;">
+//             <img src="pacabag/assets/Pictures/alpacaload.gif" style=" width: 100%; height: 100%; object-fit: contain;"">
+//         </div>
+//         <div class="col-sm-8">
+//             <div class="container">
+//                 <p class="header2"><b>name</b></p>
+//                 <p class="header3">location.address1 location.city, location.state</p>
+//                 <p>phone</p>
+//                 <p>price</p>
+//             </div>
+//         </div>
+//     </div>
+// </div>
