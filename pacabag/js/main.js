@@ -76,7 +76,6 @@ function parseData(e) {
         data: data
     })
     .done(function(res) {
-        console.log('done??');
         console.log(res);
     });
 }
