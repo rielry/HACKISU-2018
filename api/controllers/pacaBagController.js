@@ -16,37 +16,18 @@ exports.get_places = function(req, res) {
 	for(var i = 0; i < 20; i++){
 		bestBois += events[i].tag +',';
 	}
-	bestBois = bestBois.slice(0, -1);
-	console.log(bestBois);
 
-	var results;
+	bestBois = bestBois.slice(0, -1);
 
 	client.search({
 		location: req.query.location,
 		categories: bestBois,
 		sort_by: 'rating'
 	}).then(response => {
-		results = response.jsonBody.businesses;
-		// console.log(response.jsonBody.businesses);
-	}).catch(e => {
+		res.send(JSON.stringify(response.jsonBody.businesses));
+	}).catch(e => {	
 		console.log(e);
 	});
-	
-	if(req.query.budget.length != 4) {
-		results = removeExpensive(results, req.query.budget);
-	}
-
-	return results;
-}
-
-function removeExpensive(response, priceUpperBound) {
-	var result = [];
-	for(var i = 0; i < response.length; i++) {
-		if(response[i]['price'].length <= priceUpperBound.length) {
-			result.push(response[i]);
-		}
-	}
-	return result;
 }
 
 function getFit(user, events) {
