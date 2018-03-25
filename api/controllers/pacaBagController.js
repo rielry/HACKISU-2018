@@ -10,30 +10,34 @@ exports.get_places = function(req, res) {
 	//parses JSON to array of objects
 	var events = JSON.parse(fs.readFileSync('../categories.json', 'utf8'));
 
-	// console.log(events);
-	events = console.log(getFit(req.query, events));
-	// getFit(req.query, events);
+	events = getFit(req.query, events);
 	
+	var bestBois = '';
+	for(var i = 0; i < 20; i++){
+		bestBois += events[i].tag +',';
+	}
+	bestBois = bestBois.slice(0, -1);
+	console.log(bestBois);
+
+	var results;
+
 	client.search({
-		location: req.query.location
+		location: req.query.location,
+		categories: bestBois,
+		sort_by: 'rating'
 	}).then(response => {
-	  //console.log(response.jsonBody.businesses);
+		results = response.jsonBody.businesses;
+		// console.log(response.jsonBody.businesses);
 	}).catch(e => {
-	//   console.log(e);
+		console.log(e);
 	});
 	
-	// var results;
-	// if(req.query.familyFriendly) {
-	// 	results = filterAdult(res);
-	// }
+	if(req.query.budget.length != 4) {
+		results = removeExpensive(results, req.query.budget);
+	}
 
-	// if(req.query.budget.length != 4) {
-	// 	results = removeExpensive(results, req.query.budget);
-	// }
-	// console.log(results);
-	// return results;
+	return results;
 }
-
 
 function removeExpensive(response, priceUpperBound) {
 	var result = [];
@@ -45,43 +49,29 @@ function removeExpensive(response, priceUpperBound) {
 	return result;
 }
 
-function filterAdult(response) {
-	var result = [];
-	for(var i = 0; i < response.length; i++) {
-		if(!containsCategory(response[i], 'adultentertainment') || !containsCategory(response[i], 'bars') 
-		|| !containsCategory(response[i], 'barcrawl') || !containsCategory(response[i], 'clubcrawl')  
-		|| !containsCategory(response[i], 'beergardens') ) {
-			result.push(response[i]);
+function getFit(user, events) {
+	var results = [];
+	var j = 0;
+	for(var i = 0; i < events.length; i++) {
+		if(user.familyFriendly && events[i].adult === 1){
+			continue;
+		} else {
+			var totalDiff = 0;
+			totalDiff += Math.abs(parseInt(user['activeLevel']) - events[i]['relax']);
+			totalDiff += Math.abs(parseInt(user['adventureLevel']) - events[i]['adventure']);
+			totalDiff += Math.abs(parseInt(user['urbanLevel']) - events[i]['citylife']);
+			totalDiff += Math.abs(parseInt(user['materialismLevel']) - events[i]['shopping']);
+			totalDiff += Math.abs(parseInt(user['earlyRisers']) - events[i]['earlybird']);
+			
+			results.push(events[i]);
+			results[j]['userFit'] = totalDiff;
+			j++;
 		}
 	}
-	return result;
-}
 
-function containsCategory(json, value) {
-	for(var i = 0; i < json.length; i++) {
-		if(json[i]['categories']['alias'] == value) {
-			return true;
-		} 
-	}
-	return false;
-}
-
-function getFit(user, events) {
-	for(var i = 0; i < events.length; i++) {
-		var totalDiff = 0;
-
-		totalDiff += Math.abs(parseInt(user['activeLevel']) - events[i]['relax']);
-		totalDiff += Math.abs(parseInt(user['adventureLevel']) - events[i]['adventure']);
-		totalDiff += Math.abs(parseInt(user['urbanLevel']) - events[i]['citylife']);
-		totalDiff += Math.abs(parseInt(user['materialismLevel']) - events[i]['shopping']);
-		totalDiff += Math.abs(parseInt(user['earlyRisers']) - events[i]['earlybird']);
-		
-		events[i]['userFit'] = totalDiff;
-	}
-
-	events.sort(function(a, b) {
+	results.sort(function(a, b) {
 		return a['userFit'] - b['userFit'];
 	});
 
-	return events;
+	return results;
 }
