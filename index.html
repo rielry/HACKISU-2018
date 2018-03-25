@@ -43,54 +43,41 @@
                                     <form onsubmit="getLocation(event)">
                                         <p class="header3">Where are you going?</p>
                                         <input type="text" pattern="[0-9]{5}" placeholder="5 digit zipcode" name="location" id="location" class="niceInput"><br>
-                                        <input type="submit" value="Search!">
+                                        <br>
+                                       <input type="submit" value="Search!">
                                     </form>
                                 </div>
                             </div>
 
+                            <p id="locationResultBad"></p>
                             <div id="secondBoi" style="display: none; padding: 2em;">
                                 <p class="header2 headerCenter" id="locationResult"></p>
+                                <p class="header3 headerCenter">Mind if we ask some questions to get to know you better?</p>
+                                
                                 <form onsubmit="parseData(event)">
-                                    <div class="row" id="tripDetails">
-                                        <div class="col-sm-6" style="padding-left: 20%;">
-                                            <p class="header3">How will you be travelling?</p>
-                                            <select id="#travelMethod">
-                                                <option value="car">Car</option>
-                                                <option value="plane">Plane</option>
-                                                <option value="train">Train</option>
-                                            </select>
-                                            <br>
-                                            <br>
-
-                                            <p class="header3">How many days will you be staying?</p>
-                                            <!--make numbers dynamic later-->
-                                            1 <input type="range" id="daysTravelling" name="daysTravelling" min="1" max="5">5 <br> 
-                                        </div>                            
-                                        <div class="col-sm-6" style="padding-right: 20%;">
-                                            <p class="header3">What is your budget range per person for the whole trip?</p>
-                                            <input type="radio" name="budgetRange" value="low"> $0 - $150 <br>
-                                            <input type="radio" name="budgetRange" value="medium"> $151 - $300 <br>
-                                            <input type="radio" name="budgetRange" value="high"> $301 - $500 <br>
-
-                                            <br>
-                                            <p class="header3">Is this a family friendly vacation?</p>
-                                            <select id="familyFriendly">
-                                                <option value="yes">Yes</option>
-                                                <option value="no">No</option>
-                                            </select>
-                                        </div>
-                                    </div> <!-- Trip Details -->
-
                                     <br>
                                     <br>
-
                                     <div class="row" id="personalDetails">
                                         <div class="col-sm-12">
-                                            <p class="header3 headerCenter">I prefer to...</p>
                                             
+                                            <div>
+                                                <div class="col-sm-12 headerCenter">
+                                                    <p class="header3">Is this a family friendly vacation?</p>
+                                                    <select id="familyFriendly">
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <br>
+                                            <br>
+
+                                            <p class="header3 headerCenter">I prefer to...</p>
+                                            <br>
                                             <div class="row">
                                                 <div class="col-sm-4 label-Left">
-                                                    Go on relaxing vacations
+                                                    <p>Go on active vacations</p>
                                                 </div>
                                                 <div class="col-sm-4 headerCenter">
                                                     <div class="slider-wrapper">
@@ -98,13 +85,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 label-Right">
-                                                    Go on active vacations
+                                                    <p>Go on relaxing vacations</p>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-sm-4 label-Left">
-                                                    Go on daring adentures
+                                                    <p>Go on daring adentures</p>
                                                 </div>
                                                 <div class="col-sm-4 headerCenter">
                                                     <div class="slider-wrapper">
@@ -112,13 +99,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 label-Right">
-                                                    Stay in my comfort zone
+                                                    <p>Stay in my comfort zone</p>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-sm-4 label-Left">
-                                                    Enjoy local culture
+                                                    <p>Enjoy local culture</p>
                                                 </div>
                                                 <div class="col-sm-4 headerCenter">
                                                     <div class="slider-wrapper">
@@ -126,13 +113,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 label-Right">
-                                                    Stick to what I know
+                                                    <p>Stick to what I know</p>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-sm-4 label-Left">
-                                                    Explore cities
+                                                    <p>Explore cities</p>
                                                 </div>
                                                 <div class="col-sm-4 headerCenter">
                                                     <div class="slider-wrapper">
@@ -140,13 +127,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 label-Right">
-                                                    Stay in nature
+                                                    <p>Explore nature</p>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-sm-4 label-Left">
-                                                    I want keepsakes
+                                                    <p>Bring home keepsakes</p>
                                                 </div>
                                                 <div class="col-sm-4 headerCenter">
                                                     <div class="slider-wrapper">
@@ -154,13 +141,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 label-Right">
-                                                    I want memories
+                                                    <p>Bring home memories</p>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-sm-4 label-Left">
-                                                    I'm an early bird
+                                                    <p>Stay up late</p>
                                                 </div>
                                                 <div class="col-sm-4 headerCenter">
                                                     <div class="slider-wrapper">
@@ -168,7 +155,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 label-Right">
-                                                    I'm a night owl
+                                                    <p>Go to bed early</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -177,6 +164,16 @@
 
                                     <p class="buttonWrapper"><input type="submit" value="Submit" class="headerCenter"></p>
                                 </form>
+                            </div>
+
+                            <div id="thirdBoi" style="display: none; padding: 2em;">
+                                <p class="header3 headerCenter">Here are some places you might like to go!</p>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div id="placeholder"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div> 

@@ -4,5 +4,5 @@ module.exports = function(app) {
 
   // pacaBag Routes
   app.route('/places')
-	.get(pacaBag.get_places);
+    .get(pacaBag.get_places);
 };
