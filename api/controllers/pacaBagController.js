@@ -2,36 +2,38 @@
 const yelpKey = 'K92teFVAnIt-SfOICRv2_YTrh7AFePL99a8SmxFl98LYnRPx793HtAPa3Rq_4Ch__Ldfln5kCpdkqG5E6XJ8YQ0f5aELNpcUBKBOjvJSmNKybTMEFAbb_ONQ0Q22WnYx'
 const yelp = require('yelp-fusion');
 const client = yelp.client(yelpKey);
+const https = require('https');
+const fs = require('fs');
 
 exports.get_places = function(req, res) {
 
-	//sort result by price
-	res.sort(function(a, b) {
-		if(a['price'].length > b['price'].length) {
-			return 1;
-		} else if(a['price'].length < b['price'].length) {
-			return -1;
-		} else {
-			return 0;
-		}
-	});
+	//parses JSON to array of objects
+	var events = JSON.parse(fs.readFileSync('../categories.json', 'utf8'));
 
-	var results;
-	if(req.query.familyFriendly) {
-		results = filterAdult(res);
-	}
-	if(req.query.budget.length != 4) {
-		results = removeExpensive(results, req.query.budget);
-	}
+	// console.log(events);
+	events = console.log(getFit(req.query, events));
+	// getFit(req.query, events);
 	
-	var heRelacc = parseInt(req.query.activeLevel) / 5;
-	var adventure = parseInt(req.query.adventureLevel) / 5;
-	var urban = parseInt(req.query.urbanLevel) / 5;
-	var material = parseInt(req.query.materialismLevel) / 5;
-	var earlyRiser = parseInt(req.query.earlyRisers) / 5;
+	client.search({
+		location: req.query.location
+	}).then(response => {
+	  //console.log(response.jsonBody.businesses);
+	}).catch(e => {
+	//   console.log(e);
+	});
+	
+	// var results;
+	// if(req.query.familyFriendly) {
+	// 	results = filterAdult(res);
+	// }
 
-
+	// if(req.query.budget.length != 4) {
+	// 	results = removeExpensive(results, req.query.budget);
+	// }
+	// console.log(results);
+	// return results;
 }
+
 
 function removeExpensive(response, priceUpperBound) {
 	var result = [];
@@ -62,4 +64,24 @@ function containsCategory(json, value) {
 		} 
 	}
 	return false;
+}
+
+function getFit(user, events) {
+	for(var i = 0; i < events.length; i++) {
+		var totalDiff = 0;
+
+		totalDiff += Math.abs(parseInt(user['activeLevel']) - events[i]['relax']);
+		totalDiff += Math.abs(parseInt(user['adventureLevel']) - events[i]['adventure']);
+		totalDiff += Math.abs(parseInt(user['urbanLevel']) - events[i]['citylife']);
+		totalDiff += Math.abs(parseInt(user['materialismLevel']) - events[i]['shopping']);
+		totalDiff += Math.abs(parseInt(user['earlyRisers']) - events[i]['earlybird']);
+		
+		events[i]['userFit'] = totalDiff;
+	}
+
+	events.sort(function(a, b) {
+		return a['userFit'] - b['userFit'];
+	});
+
+	return events;
 }
