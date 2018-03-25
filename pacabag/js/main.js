@@ -1,10 +1,6 @@
 var betterLocation;
-var traveller;
 
 function traveller(location,
-    travelMethod,
-    days,
-    budget,
     familyFriendly,
     activeLevel,
     adventureLevel,
@@ -13,9 +9,6 @@ function traveller(location,
     earlyRisers)
 {
     this.location = location;
-    this.travelMethod = travelMethod;
-    this.days = days;
-    this.budget = budget;
     this.familyFriendly = familyFriendly;
     this.activeLevel = activeLevel;
     this.adventureLevel = adventureLevel;
@@ -23,17 +16,6 @@ function traveller(location,
     this.materialismLevel = materialismLevel;
     this.earlyRisers = earlyRisers;
 }
-
-//dynamically change days travelling based on user slidy boy
-$('#daysTravelling').on('change', function(){
-    var num = $('#daysTravelling').val();
-
-    if(num == 1) {
-        $('#daysTravellingDom').html('1 day');
-    } else {
-        $('#daysTravellingDom').html(num + ' days');
-    }
-});
 
 function getLocation(e) {
     e.preventDefault();
@@ -72,9 +54,6 @@ function parseData(e) {
 
     e.preventDefault();
 
-    var travelMethod = $('#travelMethod').val();
-    var days = $('#daysTravelling').val();
-    var budget = $('input[name=budgetRange]:checked').val();
     var familyFriendly = $('#familyFriendly').val();
     var activeLevel = $('#activeLevel').val();
     var adventureLevel = $('#adventureLevel').val();
@@ -82,33 +61,22 @@ function parseData(e) {
     var materialismLevel = $('#materialismLevel').val();
     var earlyRisers = $('#earlyRisers').val(); 
 
-    if(budget) {
-        traveller = new traveller(  betterLocation,
-                                    travelMethod,
-                                    days,
-                                    budget,
-                                    familyFriendly,
-                                    activeLevel,
-                                    adventureLevel,
-                                    urbanLevel,
-                                    materialismLevel,
-                                    earlyRisers);
+    var data = new traveller(  betterLocation,
+                                familyFriendly,
+                                activeLevel,
+                                adventureLevel,
+                                urbanLevel,
+                                materialismLevel,
+                                earlyRisers);
 
-        $.ajax({
-            url: 'http://localhost:3000/places',
-            type: 'GET',
-            dataType: 'jsonp',
-            data: traveller,
-            succes: function(){
-                console.log('success bitch');
-            },
-            error: function(err){
-                console.log('hello darkness');
-                console.log(JSON.stringify(err));
-            }
-        });
-
-    } else {
-        alert('Please fill out your budget!');
-    }
+    $.ajax({
+        url: 'http://localhost:3000/places',
+        type: 'GET',
+        dataType: 'json',
+        data: data
+    })
+    .done(function(res) {
+        console.log('done??');
+        console.log(res);
+    });
 }
